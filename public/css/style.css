@@ -1,3 +1,85 @@
-h1{
-  color: red;
+.header {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.header .inner-logo img {
+  max-height: 50px;
+  max-width: 60px;
+}
+
+.header .inner-menu > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header .inner-menu > ul > li {
+  margin-left: 20px;
+}
+.footer{
+  background-color: #333;
+  color: #ffff;
+  text-align: center;
+  padding:10px
+}
+.container.my-3 {
+  padding: 20px;
+}
+
+.box-head h2.inner-title {
+  font-size: 24px; /* 2rem = 32px */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.product-item {
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 200px; /* Làm cho hộp sản phẩm nhỏ hơn */
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.product-item:hover {
+  border: solid black 2px;
+}
+
+.inner-image img {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+.inner-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.inner-title {
+  font-size: 20px; /* 1.25rem = 20px */
+  margin: 10px 0;
+  color: #333;
+}
+
+.inner-price-new {
+  font-size: 24px; /* 1.5rem = 24px */
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.inner-price-old {
+  font-size: 16px; /* 1rem = 16px */
+  text-decoration: line-through;
+  color: #999;
+}
+
+.inner-discount {
+  font-size: 16px; /* 1rem = 16px */
+  color: #e74c3c;
 }
