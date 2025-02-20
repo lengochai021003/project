@@ -1,6 +1,6 @@
 const Product = require("../../model/product.model");
+//[GET] /admin/products
 
-//[GET] /products
 
 module.exports.index= async(req, res) => {
     const products= await Product.find({
@@ -9,7 +9,7 @@ module.exports.index= async(req, res) => {
     products.forEach(item=>{
         item.newPrice= (item.price*(100-item.discountPercentage)/100).toFixed(2);
     })
-    res.render('client/pages/products/index',{
+    res.render('admin/pages/products/index',{
         pageTitle:"Danh sách sản phẩm",
         products: products
     });
