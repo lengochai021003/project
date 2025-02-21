@@ -20,15 +20,26 @@ module.exports.index = async (req, res) => {
     find.title=search.regex;
 
   }
+  //phân trang
+  let objPagination={
+    limit:4,
+    currentPage:1
+  }
+  if(req.query.page){
+    objPagination.currentPage=parseInt(req.query.page);
+  }
+  objPagination.skip=(objPagination.currentPage-1)*objPagination.limit;
 
-
-  const products = await Product.find(find);
-
+  const countProducts = await Product.countDocuments(find);
+  const totalPage=Math.ceil(countProducts/objPagination.limit);
+  objPagination.totalPage=totalPage;
+  const products = await Product.find(find).limit(objPagination.limit).skip(objPagination.skip);
 
   res.render('admin/pages/products/index', {
     pageTitle: "Danh sách sản phẩm",
     products: products,
     filterStatus:filterStatus,
-    keyword:search.keyword
+    keyword:search.keyword,
+    pagination:objPagination
   });
 }
