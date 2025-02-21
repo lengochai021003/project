@@ -29,7 +29,7 @@
   margin: 15px;
   position: relative;
   left: 150px;
-  width: calc(100%-180px);
+  width: calc(100% - 180px);
 }
 .sider .inner-menu ul {
   list-style: none;
